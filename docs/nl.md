@@ -63,7 +63,7 @@ C --> E[Fetch API]
 graph LR
 F[Python Flask] --> G[CSV-gegevensverwerking]
 F --> H[RESTful API]
-H --> I[/api/income]
+H --> I("/api/income")
 ```
 
 **Gegevensbeheer**  
@@ -195,5 +195,5 @@ const TALEN = {
 
 ---
 > **Systeemvereisten**: Python 3.8+, Moderne browser (Chrome 88+, Firefox 84+, Safari 14+)  
-> **Licentie**: MIT Open Source  
+> **Licentie**: AGPL-3.0 Open Source  
 > **Bijdragen**: Zie CONTRIBUTING.md voor richtlijnen

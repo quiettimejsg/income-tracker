@@ -63,7 +63,7 @@ C --> E[Fetch API]
 graph LR
 F[Python Flask] --> G[CSV डेटा हैंडलिंग]
 F --> H[RESTful API]
-H --> I[/api/income]
+H --> I("/api/income")
 ```
 
 **डेटा प्रबंधन**  
@@ -195,5 +195,5 @@ const भाषाएँ = {
 
 ---
 > **सिस्टम आवश्यकताएँ**: Python 3.8+, आधुनिक ब्राउज़र (Chrome 88+, Firefox 84+, Safari 14+)  
-> **लाइसेंस**: MIT ओपन सोर्स  
+> **लाइसेंस**: AGPL-3.0 ओपन सोर्स  
 > **योगदान**: दिशानिर्देशों के लिए CONTRIBUTING.md देखें  

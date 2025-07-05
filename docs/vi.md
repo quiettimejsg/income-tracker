@@ -63,7 +63,7 @@ C --> E[Fetch API]
 graph LR
 F[Python Flask] --> G[Xử lý Dữ liệu CSV]
 F --> H[API RESTful]
-H --> I[/api/income]
+H --> I("/api/income")
 ```
 
 **Quản lý Dữ liệu**  
@@ -195,5 +195,5 @@ const NGON_NGU = {
 
 ---
 > **Yêu cầu Hệ thống**: Python 3.8+, Trình duyệt Hiện đại (Chrome 88+, Firefox 84+, Safari 14+)  
-> **Giấy phép**: MIT Nguồn mở  
+> **Giấy phép**: AGPL-3.0 Nguồn mở  
 > **Đóng góp**: Xem CONTRIBUTING.md để biết hướng dẫn  

@@ -63,7 +63,7 @@ C --> E[Fetch API]
 graph LR
 F[Python Flask] --> G[Gestione Dati CSV]
 F --> H[API RESTful]
-H --> I[/api/income]
+H --> I("/api/income")
 ```
 
 **Gestione Dati**  
@@ -195,5 +195,5 @@ const LINGUE = {
 
 ---
 > **Requisiti di Sistema**: Python 3.8+, Browser Moderno (Chrome 88+, Firefox 84+, Safari 14+)  
-> **Licenza**: Open Source MIT  
+> **Licenza**: Open Source AGPL-3.0  
 > **Contributi**: Vedi CONTRIBUTING.md per le linee guida  

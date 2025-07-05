@@ -195,5 +195,5 @@ const 言語集 = {
 
 ---
 > **器需**：Python 3.8+，當世瀏覽器（Chrome 88+、Firefox 84+、Safari 14+）  
-> **契書**：MIT 開物之契  
+> **契書**：AGPL-3.0 開物之契  
 > **共撰**：見 CONTRIBUTING.md 之規  

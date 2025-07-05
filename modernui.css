@@ -1,0 +1,433 @@
+/* 基础变量定义 */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3a0ca3;
+  --accent-color: #f72585;
+  --light-bg: #f8f9fa;
+  --dark-bg: #121212;
+  --text-light: #212529;
+  --text-dark: #e9ecef;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #1e1e1e;
+  --border-light: #dee2e6;
+  --border-dark: #444;
+  --success-color: #2ecc71;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+  --transition: all 0.3s ease;
+}
+
+/* 全局重置 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background-color: var(--light-bg);
+  color: var(--text-light);
+  line-height: 1.6;
+  transition: var(--transition);
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--text-dark);
+}
+
+/* 标题样式 */
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* 新旧样式切换按钮 */
+.style-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.style-switcher button {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.style-switcher button:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+  transform: translateY(-2px); /* 添加悬停上移动画 */
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2); /* 添加悬停阴影 */
+}
+
+.style-switcher button.active {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+  transform: translateY(-2px); /* 添加激活状态上移动画 */
+}
+
+body.dark-mode .style-switcher button {
+  border-color: var(--border-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode .style-switcher button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 深色模式悬停阴影 */
+  transform: translateY(-2px); /* 深色模式悬停上移动画 */
+}
+
+body.dark-mode .style-switcher button.active {
+  background-color: var(--secondary-color);
+  color: white;
+  transform: translateY(-2px); /* 深色模式激活状态上移动画 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 深色模式激活状态阴影 */
+}
+
+/* 语言切换器 */
+.language-switcher {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.language-switcher button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.language-switcher button:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+  transform: translateY(-2px); /* 添加悬停上移动画 */
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2); /* 添加悬停阴影 */
+}
+
+.language-switcher .active {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+  transform: translateY(-2px); /* 添加激活状态上移动画 */
+}
+
+/* 表单容器 */
+.form-container {
+  background-color: var(--card-bg-light);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+  transition: var(--transition);
+}
+
+body.dark-mode .form-container {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* 表单样式 */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+label i {
+  font-size: 1.1rem;
+}
+
+input {
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid var(--border-light);
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+body.dark-mode input {
+  background-color: #2a2a2a;
+  border-color: var(--border-dark);
+  color: var(--text-dark);
+}
+
+button[type="submit"] {
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: var(--transition);
+  margin-top: 10px;
+  box-shadow: var(--shadow);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+#success-message {
+  margin-top: 20px;
+  color: var(--success-color);
+  font-weight: 600;
+  text-align: center;
+  padding: 12px;
+  background-color: rgba(46, 204, 113, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+/* 表格容器 */
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  background-color: var(--card-bg-light);
+  transition: var(--transition);
+}
+
+body.dark-mode .table-container {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-dark);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+body.dark-mode td {
+  border-bottom-color: var(--border-dark);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+body.dark-mode tr:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+    max-width: 85%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .form-container {
+    padding: 20px;
+  }
+  
+  .language-switcher {
+    gap: 8px;
+  }
+  
+  .language-switcher button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  input, button[type="submit"] {
+    padding: 12px;
+  }
+  
+  .table-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+    body {
+        max-width: 95%;
+    }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr {
+    margin-bottom: 20px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+  }
+  
+  body.dark-mode tr {
+    border-color: var(--border-dark);
+  }
+  
+  td {
+    position: relative;
+    padding-left: 35%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+    border: none;
+  }
+  
+  body.dark-mode td {
+    border-bottom-color: var(--border-dark);
+  }
+  
+  td::before {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    width: 30%;
+    padding-right: 10px;
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  
+  [dir="rtl"] td {
+    padding-left: 0;
+    padding-right: 35%;
+    text-align: right;
+  }
+  
+  [dir="rtl"] td::before {
+    left: auto;
+    right: 15px;
+    text-align: right;
+  }
+
+  .style-switcher {
+    position: static;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .style-switcher button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* 工具提示 */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+body.dark-mode .tooltip .tooltip-text {
+  background-color: #555;
+}

@@ -1,5 +1,5 @@
 // 声明全局变量存储语言包
-let en, zh, fr, es, de, ja, pt, ru, it, ar, ko, hi, id, tr, nl, pl, sv, vi, th, uk;
+let en, zh, fr, es, de, ja, pt, ru, it, ar, ko, hi, id, tr, nl, pl, sv, vi, th, uk, mi;
 
 // 在DOM加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,14 +29,18 @@ async function init() {
     vi = await fetch('locales/vi.json').then(res => res.json());
     th = await fetch('locales/th.json').then(res => res.json());
     uk = await fetch('locales/uk.json').then(res => res.json());
+    mi = await fetch('locales/mi.json').then(res => res.json());
     
     // 初始化页面
     updateText();
+    // 默认隐藏成功消息
+      const successMessage = document.getElementById('success-message');
+        successMessage.style.display = 'none';
     setupEventListeners();
     fetchAndDisplayIncome();
 }
 
-const supportedLanguages = ['zh', 'en', 'fr', 'es', 'de', 'ja', 'it', 'pt', 'ru', 'ar', 'ko', 'hi', 'id', 'tr', 'nl', 'pl', 'sv', 'vi', 'th', 'uk'];
+const supportedLanguages = ['zh', 'en', 'fr', 'es', 'de', 'ja', 'it', 'pt', 'ru', 'ar', 'ko', 'hi', 'id', 'tr', 'nl', 'pl', 'sv', 'vi', 'th', 'uk' ,'mi'];
 const browserLang = navigator.language.split('-')[0];
 let currentLang = supportedLanguages.includes(browserLang) ? browserLang : 'en';
 
@@ -105,6 +109,9 @@ function updateText() {
             case 'uk':
                 translation = uk;
                 break;
+            case 'mi':
+                translation = mi;
+                break;
             default:
                 translation = en;
         }
@@ -164,7 +171,7 @@ async function fetchAndDisplayIncome() {
 // 安全获取语言字符串的辅助函数
 function getLocaleString(key) {
     const keys = key.split('.');
-    const languageMap = { zh, en, fr, es, de, ja, it, pt, ru, ar, ko, hi, id, tr, nl, pl, sv, vi, th, uk };
+    const languageMap = { zh, en, fr, es, de, ja, it, pt, ru, ar, ko, hi, id, tr, nl, pl, sv, vi, th, uk ,mi};
     let result = languageMap[currentLang] || en;
     
     for (const k of keys) {
@@ -341,6 +348,14 @@ function setupEventListeners() {
         document.getElementById('lang-uk').classList.add('active');
     });
 
+    document.getElementById('lang-mi').addEventListener('click', () => {
+        currentLang = 'mi';
+        updateText();
+        fetchAndDisplayIncome();
+        document.querySelector('.language-switcher button.active').classList.remove('active');
+        document.getElementById('lang-mi').classList.add('active');
+    });
+
     // 表单提交事件
     document.getElementById('income-form').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -358,23 +373,57 @@ function setupEventListeners() {
             });
             
             if (response.ok) {
-                document.getElementById('success-message').textContent = 
-                    getLocaleString('success');
+                const successMessage = document.getElementById('success-message');
+            successMessage.textContent = getLocaleString('success');
+            successMessage.style.display = 'block';
+            setTimeout(() => successMessage.style.display = 'none', 3000);
+                    successMessage.style.display = 'block';
+            setTimeout(() => successMessage.style.display = 'none', 3000);
                 e.target.reset();
             }
         } catch (error) {
             console.error('Error:', error);
-            document.getElementById('success-message').textContent = 
-                currentLang === 'zh' ? '保存失败，请重试。' : 'Save failed, please try again.';
+            const successMessage = document.getElementById('success-message');
+            successMessage.textContent = currentLang === 'zh' ? '保存失败，请重试。' : 'Save failed, please try again.';
+            successMessage.style.display = 'block';
+            setTimeout(() => successMessage.style.display = 'none', 3000);
         }
     });
 
-    // 深色模式切换
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-        });
+    // 监听系统深色模式变化，自动切换深色模式
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleDarkModeChange = (e) => {
+        if (e.matches) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+        localStorage.setItem('darkMode', e.matches);
+    };
+    
+    darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
+    handleDarkModeChange(darkModeMediaQuery);
+
+    // 样式切换功能
+    document.getElementById('style-old').addEventListener('click', () => {
+        document.getElementById('style-link').href = 'styles.css';
+        document.querySelector('.style-switcher button.active').classList.remove('active');
+        document.getElementById('style-old').classList.add('active');
+        localStorage.setItem('preferredStyle', 'old');
+    });
+
+    document.getElementById('style-new').addEventListener('click', () => {
+        document.getElementById('style-link').href = 'modernui.css';
+        document.querySelector('.style-switcher button.active').classList.remove('active');
+        document.getElementById('style-new').classList.add('active');
+        localStorage.setItem('preferredStyle', 'new');
+    });
+
+    // 应用保存的样式偏好
+    const savedStyle = localStorage.getItem('preferredStyle');
+    if (savedStyle === 'new') {
+        document.getElementById('style-link').href = 'modernui.css';
+        document.querySelector('.style-switcher button.active').classList.remove('active');
+        document.getElementById('style-new').classList.add('active');
     }
 }

@@ -22,6 +22,13 @@ h1 {
     flex-wrap: wrap; /* 允许换行显示 */
 }
 
+.style-switcher {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
 .language-switcher button {
     padding: 8px 12px;
     margin: 0 5px 8px;

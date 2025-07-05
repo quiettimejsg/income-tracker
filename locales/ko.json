@@ -1,0 +1,16 @@
+{
+  "app_title": "수입 관리",
+  "form": {
+    "date": "날짜",
+    "amount": "금액",
+    "category": "카테고리",
+    "submit": "저장"
+  },
+  "success": "수입 내역이 저장되었습니다!",
+  "records": {
+    "title": "수입 내역",
+    "date": "날짜",
+    "amount": "금액",
+    "category": "카테고리"
+  }
+}

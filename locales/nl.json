@@ -1,0 +1,16 @@
+{
+  "app_title": "Inkomstenbeheer",
+  "form": {
+    "date": "Datum",
+    "amount": "Bedrag",
+    "category": "Categorie",
+    "submit": "Opslaan"
+  },
+  "success": "Inkomsten opgeslagen!",
+  "records": {
+    "title": "Inkomstenoverzicht",
+    "date": "Datum",
+    "amount": "Bedrag",
+    "category": "Categorie"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "app_title": "Gestor de Receitas",
+  "form": {
+    "date": "Data",
+    "amount": "Valor",
+    "category": "Categoria",
+    "submit": "Salvar"
+  },
+  "success": "Receita salva!",
+  "records": {
+    "title": "Histórico de Receitas",
+    "date": "Data",
+    "amount": "Valor",
+    "category": "Categoria"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "app_title": "Theo dõi Thu nhập",
+  "form": {
+    "date": "Ngày",
+    "amount": "Số tiền",
+    "category": "Danh mục",
+    "submit": "Lưu"
+  },
+  "success": "Đã lưu thu nhập!",
+  "records": {
+    "title": "Lịch sử Thu nhập",
+    "date": "Ngày",
+    "amount": "Số tiền",
+    "category": "Danh mục"
+  }
+}

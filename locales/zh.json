@@ -1,0 +1,16 @@
+{
+  "app_title": "度支錄",
+  "form": {
+    "date": "曆日",
+    "amount": "金數",
+    "category": "部類",
+    "submit": "存記"
+  },
+  "success": "度支已錄",
+  "records": {
+    "title": "度支簿",
+    "date": "曆日",
+    "amount": "金數",
+    "category": "部類"
+  }
+}

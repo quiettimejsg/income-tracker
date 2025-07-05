@@ -1,0 +1,16 @@
+{
+    "app_title": "Suivi des Revenus",
+    "records": {
+        "title": "Historique des Revenus",
+        "date": "Date",
+        "amount": "Montant",
+        "category": "Catégorie"
+    },
+    "form": {
+        "date": "Date",
+        "amount": "Montant",
+        "category": "Catégorie",
+        "submit": "Enregistrer"
+    },
+    "success": "Revenu enregistré !"
+}

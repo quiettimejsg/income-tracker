@@ -1,0 +1,16 @@
+{
+    "app_title": "Einnahmenerfassung",
+    "records": {
+        "title": "Einnahmenübersicht",
+        "date": "Datum",
+        "amount": "Betrag",
+        "category": "Kategorie"
+    },
+    "form": {
+        "date": "Datum",
+        "amount": "Betrag",
+        "category": "Kategorie",
+        "submit": "Speichern"
+    },
+    "success": "Eintrag erfolgreich gespeichert!"
+}

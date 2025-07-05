@@ -1,0 +1,16 @@
+{
+  "app_title": "Inkomsthanterare",
+  "form": {
+    "date": "Datum",
+    "amount": "Belopp",
+    "category": "Kategori",
+    "submit": "Spara"
+  },
+  "success": "Inkomst sparad!",
+  "records": {
+    "title": "Inkomsthistorik",
+    "date": "Datum",
+    "amount": "Belopp",
+    "category": "Kategori"
+  }
+}

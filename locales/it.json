@@ -1,0 +1,16 @@
+{
+  "app_title": "Registro delle Entrate",
+  "form": {
+    "date": "Data",
+    "amount": "Importo",
+    "category": "Categoria",
+    "submit": "Salva"
+  },
+  "success": "Entrata registrata!",
+  "records": {
+    "title": "Storico Entrate",
+    "date": "Data",
+    "amount": "Importo",
+    "category": "Categoria"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "app_title": "Pencatat Penghasilan",
+  "form": {
+    "date": "Tanggal",
+    "amount": "Jumlah",
+    "category": "Kategori",
+    "submit": "Simpan"
+  },
+  "success": "Data penghasilan tersimpan!",
+  "records": {
+    "title": "Riwayat Penghasilan",
+    "date": "Tanggal",
+    "amount": "Jumlah",
+    "category": "Kategori"
+  }
+}

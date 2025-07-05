@@ -1,0 +1,16 @@
+{
+    "app_title": "収入トラッカー",
+    "records": {
+        "title": "収入履歴",
+        "date": "日付",
+        "amount": "金額",
+        "category": "カテゴリー"
+    },
+    "form": {
+        "date": "日付",
+        "amount": "金額",
+        "category": "カテゴリー",
+        "submit": "保存"
+    },
+    "success": "収入を記録しました！"
+}

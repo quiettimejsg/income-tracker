@@ -1,0 +1,16 @@
+{
+  "app_title": "Rejestr Przychodów",
+  "form": {
+    "date": "Data",
+    "amount": "Kwota",
+    "category": "Kategoria",
+    "submit": "Zapisz"
+  },
+  "success": "Przychód zapisany!",
+  "records": {
+    "title": "Historia Przychodów",
+    "date": "Data",
+    "amount": "Kwota",
+    "category": "Kategoria"
+  }
+}

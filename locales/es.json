@@ -1,0 +1,20 @@
+{
+    "app_title": "Registro de Ingresos",
+    "records": {
+        "title": "Historial de Ingresos",
+        "date": "Fecha",
+        "amount": "Monto",
+        "category": "Categoría"
+    },
+    "form": {
+        "date": "Fecha",
+        "amount": "Monto",
+        "category": "Categoría",
+        "submit": "Guardar"
+    },
+    "messages": {
+        "save_success": "¡Ingreso registrado!",
+        "save_error": "Error al guardar. Intente nuevamente.",
+        "no_records": "No hay registros"
+    }
+}

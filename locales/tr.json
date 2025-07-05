@@ -1,0 +1,16 @@
+{
+  "app_title": "Gelir Takipçisi",
+  "form": {
+    "date": "Tarih",
+    "amount": "Tutar",
+    "category": "Kategori",
+    "submit": "Kaydet"
+  },
+  "success": "Gelir kaydedildi!",
+  "records": {
+    "title": "Gelir Geçmişi",
+    "date": "Tarih",
+    "amount": "Tutar",
+    "category": "Kategori"
+  }
+}

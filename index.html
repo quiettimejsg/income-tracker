@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app_title">收入记录</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 data-i18n="app_title">收入记录</h1>
+    
+    <p>Language Switch: Please select your preferred language</p>
+
+    <div class="language-switcher">
+        <button id="lang-zh" class="active">中文</button>
+        <button id="lang-en">English</button>
+        <button id="lang-fr">Français</button>
+        <button id="lang-es">Español</button>
+        <button id="lang-de">Deutsch</button>
+        <button id="lang-ja">日本語</button>
+        <button id="lang-it">Italiano</button>
+        <button id="lang-pt">Português</button>
+        <button id="lang-ru">Русский</button>
+        <button id="lang-ar">العربية</button>
+        <button id="lang-ko">한국어</button>
+        <button id="lang-hi">हिन्दी</button>
+        <button id="lang-id">Bahasa Indonesia</button>
+        <button id="lang-tr">Türkçe</button>
+        <button id="lang-nl">Nederlands</button>
+        <button id="lang-pl">Polski</button>
+        <button id="lang-sv">Svenska</button>
+        <button id="lang-vi">Tiếng Việt</button>
+        <button id="lang-th">ไทย</button>
+        <button id="lang-uk">Українська</button>
+    </div>
+
+    <form id="income-form">
+        <div class="form-group">
+            <label for="date" data-i18n="form.date">日期：</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="amount" data-i18n="form.amount">金额：</label>
+            <input type="number" id="amount" name="amount" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="category" data-i18n="form.category">分类：</label>
+            <input type="text" id="category" name="category" required>
+        </div>
+        <button type="submit" data-i18n="form.submit">提交</button>
+    </form>
+
+    <div id="success-message"></div>
+
+    <h2 data-i18n="records.title">收入记录</h2>
+    <div class="table-container">
+        <table id="income-table">
+            <thead>
+                <tr>
+                    <th data-i18n="records.date">日期</th>
+                    <th data-i18n="records.amount">金额</th>
+                    <th data-i18n="records.category">分类</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 数据将通过JavaScript动态插入 -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

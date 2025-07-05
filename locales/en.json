@@ -1,0 +1,16 @@
+{
+  "app_title": "Income Tracker",
+  "form": {
+    "date": "Date",
+    "amount": "Amount",
+    "category": "Category",
+    "submit": "Save Entry"
+  },
+  "success": "Income record saved!",
+  "records": {
+    "title": "Income Records",
+    "date": "Date",
+    "amount": "Amount",
+    "category": "Category"
+  }
+}

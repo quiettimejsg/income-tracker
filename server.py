@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import csv
 import os
+from waitress import serve
 
 app = Flask(__name__, static_folder='.')
 CORS(app)
@@ -47,4 +48,4 @@ def save_income():
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    serve(app, host='0.0.0.0', port=5000)

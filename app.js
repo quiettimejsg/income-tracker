@@ -1,5 +1,5 @@
 // 声明全局变量存储语言包
-let en, zh, fr, es, de, ja, pt, ru, it, ar, ko, hi, id, tr, nl, pl, sv, vi, th, uk, mi;
+let en, zh, fr, es, de, ja, pt, ru, it, ar, ko, hi, id, tr, nl, pl, sv, vi, th, uk;
 
 // 在DOM加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,7 +29,6 @@ async function init() {
     vi = await fetch('locales/vi.json').then(res => res.json());
     th = await fetch('locales/th.json').then(res => res.json());
     uk = await fetch('locales/uk.json').then(res => res.json());
-    mi = await fetch('locales/mi.json').then(res => res.json());
     
     // 初始化页面
     updateText();
@@ -40,7 +39,7 @@ async function init() {
     fetchAndDisplayIncome();
 }
 
-const supportedLanguages = ['zh', 'en', 'fr', 'es', 'de', 'ja', 'it', 'pt', 'ru', 'ar', 'ko', 'hi', 'id', 'tr', 'nl', 'pl', 'sv', 'vi', 'th', 'uk' ,'mi'];
+const supportedLanguages = ['zh', 'en', 'fr', 'es', 'de', 'ja', 'it', 'pt', 'ru', 'ar', 'ko', 'hi', 'id', 'tr', 'nl', 'pl', 'sv', 'vi', 'th', 'uk'];
 const browserLang = navigator.language.split('-')[0];
 let currentLang = supportedLanguages.includes(browserLang) ? browserLang : 'en';
 
@@ -109,9 +108,6 @@ function updateText() {
             case 'uk':
                 translation = uk;
                 break;
-            case 'mi':
-                translation = mi;
-                break;
             default:
                 translation = en;
         }
@@ -171,7 +167,7 @@ async function fetchAndDisplayIncome() {
 // 安全获取语言字符串的辅助函数
 function getLocaleString(key) {
     const keys = key.split('.');
-    const languageMap = { zh, en, fr, es, de, ja, it, pt, ru, ar, ko, hi, id, tr, nl, pl, sv, vi, th, uk ,mi};
+    const languageMap = { zh, en, fr, es, de, ja, it, pt, ru, ar, ko, hi, id, tr, nl, pl, sv, vi, th, uk};
     let result = languageMap[currentLang] || en;
     
     for (const k of keys) {
@@ -346,14 +342,6 @@ function setupEventListeners() {
         fetchAndDisplayIncome();
         document.querySelector('.language-switcher button.active').classList.remove('active');
         document.getElementById('lang-uk').classList.add('active');
-    });
-
-    document.getElementById('lang-mi').addEventListener('click', () => {
-        currentLang = 'mi';
-        updateText();
-        fetchAndDisplayIncome();
-        document.querySelector('.language-switcher button.active').classList.remove('active');
-        document.getElementById('lang-mi').classList.add('active');
     });
 
     // 表单提交事件

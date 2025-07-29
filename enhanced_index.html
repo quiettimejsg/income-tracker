@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app_title">Enhanced Income Tracker</title>
+    <link rel="stylesheet" href="beautiful_styles.css" id="style-link">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+    <meta name="description" content="A comprehensive income and expense tracking application with multi-language support">
+    <meta name="keywords" content="income tracker, expense tracker, financial management, budgeting">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="lang-zh" class="active">中文</button>
+        <button id="lang-en">English</button>
+        <button id="lang-fr">Français</button>
+        <button id="lang-es">Español</button>
+        <button id="lang-de">Deutsch</button>
+        <button id="lang-ja">日本語</button>
+        <button id="lang-it">Italiano</button>
+        <button id="lang-pt">Português</button>
+        <button id="lang-ru">Русский</button>
+        <button id="lang-ar">العربية</button>
+        <button id="lang-ko">한국어</button>
+        <button id="lang-hi">हिन्दी</button>
+        <button id="lang-id">Bahasa Indonesia</button>
+        <button id="lang-tr">Türkçe</button>
+        <button id="lang-nl">Nederlands</button>
+        <button id="lang-pl">Polski</button>
+        <button id="lang-sv">Svenska</button>
+        <button id="lang-vi">Tiếng Việt</button>
+        <button id="lang-th">ไทย</button>
+        <button id="lang-uk">Українська</button>
+    </div>
+
+    <!-- Style Switcher -->
+    <div class="style-switcher">
+        <button id="style-old">Classic</button>
+        <button id="style-new" class="active">Modern</button>
+    </div>
+
+    <!-- Main Application Container -->
+    <div id="app">
+        <!-- Content will be dynamically loaded here -->
+        <div class="loading-screen">
+            <div class="loading-spinner"></div>
+            <p data-i18n="common.loading">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="chart.min.js"></script>
+    <script src="charts.js"></script>
+    <script src="analytics_page.js"></script>
+    <script src="enhanced_app.js"></script>
+    
+    <!-- Service Worker for PWA support -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
+
